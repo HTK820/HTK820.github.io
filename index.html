@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Networking & IT — Portfolio</title>
+  <meta name="description" content="Advanced dark portfolio — full‑screen, animated title, interactive projects." />
+  <style>
+    /* =====================
+       ADVANCED DARK — FULLSCREEN
+       ===================== */
+    :root{
+      --bg:#060712;
+      --pane:#0a0e1f;
+      --card:#0f1430;
+      --text:#eaf0ff;
+      --muted:#9aa3c7;
+      --accent:#7a8cff;  /* indigo */
+      --teal:#36e3c2;    /* teal */
+      --pink:#ff72c6;    /* pink */
+      --ring:rgba(122,140,255,.35);
+      --shadow:0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;scroll-behavior:smooth}
+    body{
+      font:16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial;
+      color:var(--text);
+      background:radial-gradient(1300px 700px at 10% -10%, rgba(122,140,255,.15), transparent 60%),
+                 radial-gradient(1200px 600px at 110% 20%, rgba(54,227,194,.10), transparent 60%),
+                 var(--bg);
+      overflow-x:hidden;
+    }
+
+    /* Scroll snap for true full‑screen sections */
+    main{scroll-snap-type:y mandatory}
+    section{min-height:100vh; display:grid; place-items:center; padding:64px 24px; scroll-snap-align:start}
+
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(1200px, 92vw); margin:0 auto}
+
+    /* ======== Fixed Glass Nav ======== */
+    header{position:fixed; inset:0 0 auto 0; height:64px; z-index:60; display:grid; place-items:center; backdrop-filter:saturate(160%) blur(10px); background:linear-gradient(180deg, rgba(9,10,20,.65), rgba(9,10,20,.25)); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{width:min(1200px,92vw); display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.3px}
+    .logo{width:38px;height:38px;border-radius:12px;background:conic-gradient(from 220deg, var(--accent), var(--teal), var(--pink), var(--accent)); display:grid; place-items:center; color:#0a0b17; font-weight:900; box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+    .nav a{padding:10px 12px; border-radius:12px}
+    .nav a.active, .nav a:hover{background:rgba(255,255,255,.07)}
+    .cta{border:1px solid rgba(255,255,255,.16); background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04)); color:var(--text); padding:10px 14px; border-radius:12px; box-shadow:var(--shadow)}
+
+    /* ======== Fancy Card ======== */
+    .card{position:relative; background:linear-gradient(180deg, var(--card), #0d1128); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow); overflow:hidden; border:1px solid rgba(255,255,255,.08)}
+    .card::before{content:''; position:absolute; inset:-1px; border-radius:inherit; padding:1px; background:conic-gradient(from 180deg, rgba(122,140,255,.55), rgba(54,227,194,.45), rgba(255,114,198,.45), rgba(122,140,255,.55)); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; animation:spin 10s linear infinite}
+    @keyframes spin{to{transform:rotate(1turn)}}
+
+    /* ======== Hero ======== */
+    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:32px; align-items:center}
+    .badge{display:inline-flex; gap:8px; align-items:center; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); color:var(--muted); font-weight:700; font-size:.9rem}
+    .subtitle{margin:12px 0 0; color:var(--muted)}
+
+    /* Advanced Title Drop */
+    h1{font-size:clamp(2.2rem, 4.6vw, 4rem); margin:12px 0 6px; letter-spacing:.4px; font-weight:900}
+    .drop{display:inline-block; transform:translateY(-60px) rotateX(60deg); opacity:0; filter:blur(8px)}
+    @keyframes drop { to { transform:translateY(0) rotateX(0); opacity:1; filter:blur(0) } }
+
+    h2{font-size:1.25rem; letter-spacing:.35px; margin:0 0 14px}
+
+    /* ======== Skills — badges only (no meters) ======== */
+    .skills{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px}
+    .skill{padding:14px; border-radius:14px; border:1px dashed rgba(255,255,255,.14); background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); font-weight:700}
+
+    /* ======== Projects ======== */
+    .proj-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:18px}
+    .proj-card{cursor:pointer}
+    .proj-visual{height:160px; border-radius:14px; background:linear-gradient(135deg, rgba(122,140,255,.35), rgba(54,227,194,.25)); border:1px solid rgba(255,255,255,.12); margin-bottom:12px; position:relative; overflow:hidden}
+    .proj-visual::after{content:''; position:absolute; inset:-40% -40% auto auto; height:200%; width:200%; background:radial-gradient(600px 300px at 0% 0%, rgba(255,114,198,.25), transparent 30%); transform:rotate(25deg)}
+    .proj-title{margin:4px 0 6px; font-weight:800}
+    .proj-card.card{transition:transform .25s ease, box-shadow .25s ease}
+    .proj-card.card:hover{transform:translateY(-4px); box-shadow:0 22px 60px rgba(0,0,0,.55)}
+
+    /* ======== Modal Viewer ======== */
+    dialog{width:min(940px, 92vw); border:none; padding:0; border-radius:20px; background:linear-gradient(180deg, var(--card), #0b0f25); color:var(--text); box-shadow:var(--shadow)}
+    dialog::backdrop{background:rgba(0,0,0,.6)}
+    .modal-head{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px; border-bottom:1px solid rgba(255,255,255,.08)}
+    .modal-body{padding:16px 20px; display:grid; gap:12px}
+    .actions{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{border:1px solid rgba(255,255,255,.16); background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04)); color:var(--text); padding:10px 14px; border-radius:12px; display:inline-flex; align-items:center; gap:8px}
+    .close{cursor:pointer}
+
+    /* Reveal */
+    .reveal{opacity:0; transform:translateY(18px); transition:all .7s cubic-bezier(.2,.7,0,1)}
+    .reveal.in{opacity:1; transform:none}
+
+    /* Particles BG */
+    #fx{position:fixed; inset:0; z-index:-1}
+
+    @media (max-width:1020px){ .hero-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <canvas id="fx" aria-hidden="true"></canvas>
+
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden>IT</div>
+        <span>Networking & IT</span>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO (fullscreen) -->
+    <section id="home">
+      <div class="container hero-grid">
+        <div class="card reveal">
+          <span class="badge">🎓 Internship / First Job</span>
+          <h1 id="title" aria-label="Networking and IT Student"></h1>
+          <p class="subtitle">I build and support networks. Clean setups, fast fixes, secure systems.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:14px">
+            <a class="cta" href="#projects">🔧 See projects</a>
+            <a class="cta" href="#contact">📨 Contact</a>
+          </div>
+        </div>
+        <div class="card reveal">
+          <h2>Quick facts</h2>
+          <div style="display:grid; gap:8px">
+            <div>📍 Bangkok, Thailand</div>
+            <div>🎯 Goal: Internship / Junior role</div>
+            <div>🛠 Focus: Networking · IT Support · Junior Sysadmin</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS (fullscreen) -->
+    <section id="skills">
+      <div class="container">
+        <div class="card reveal">
+          <h2>Skills</h2>
+          <div class="skills">
+            <div class="skill">LAN/WAN · TCP/IP · Routing & Switching</div>
+            <div class="skill">Troubleshooting & Configuration</div>
+            <div class="skill">Cisco Packet Tracer · Wireshark</div>
+            <div class="skill">Firewall & Security basics</div>
+            <div class="skill">HTML · CSS</div>
+            <div class="skill">Java</div>
+            <div class="skill">MySQL</div>
+            <div class="skill">Teamwork · Problem‑solving</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS (fullscreen) -->
+    <section id="projects">
+      <div class="container">
+        <div class="card reveal">
+          <h2>Projects</h2>
+          <div class="proj-grid">
+            <!-- Project 1 -->
+            <article class="proj-card card" data-title="Multi‑LAN Network Design" data-summary="Multiple LANs with routers and switches in Cisco Packet Tracer. Class C subnetting, router‑to‑router links." data-points='["VLAN segmentation & inter‑VLAN routing","Basic ACLs for segment rules","Validated with ping, traceroute & Wireshark"]' data-demo="#" data-repo="#">
+              <div class="proj-visual" aria-hidden="true"></div>
+              <div class="proj-title">Multi‑LAN Network Design</div>
+              <div class="muted">Cisco Packet Tracer · Subnetting · ACL</div>
+            </article>
+            <!-- Project 2 (placeholder) -->
+            <article class="proj-card card" data-title="Simple Helpdesk Dashboard" data-summary="A lightweight IT helpdesk dashboard mockup (HTML/CSS/JS). Ticket list, status filters, keyboard shortcuts." data-points='["Client‑side search & filter","LocalStorage mock data","Accessible keyboard nav"]' data-demo="#" data-repo="#">
+              <div class="proj-visual" aria-hidden="true" style="background:linear-gradient(135deg, rgba(54,227,194,.35), rgba(122,140,255,.25))"></div>
+              <div class="proj-title">Helpdesk Dashboard</div>
+              <div class="muted">HTML · CSS · JS</div>
+            </article>
+            <!-- Project 3 (placeholder) -->
+            <article class="proj-card card" data-title="Network Topology Visualizer" data-summary="Interactive topology nodes (pure JS). Drag to rearrange, lines auto‑connect." data-points='["Canvas drawing","Snap‑to grid","Export to PNG"]' data-demo="#" data-repo="#">
+              <div class="proj-visual" aria-hidden="true" style="background:linear-gradient(135deg, rgba(255,114,198,.32), rgba(122,140,255,.28))"></div>
+              <div class="proj-title">Topology Visualizer</div>
+              <div class="muted">Canvas · JS</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION (fullscreen) -->
+    <section id="education">
+      <div class="container">
+        <div class="card reveal">
+          <h2>Education</h2>
+          <p><strong>B.Sc. Information Technology</strong> — Stamford International University (2022 – Present) · GPA: 3.8 / 4.0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (fullscreen) -->
+    <section id="contact">
+      <div class="container">
+        <div class="card reveal">
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:your.name@example.com">your.name@example.com</a> · Phone: +66‑xxx‑xxx‑xxx · GitHub: <a href="https://github.com/yourusername">@yourusername</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="text-align:center; padding:20px 0 40px; color:var(--muted)">© <span id="year"></span> Networking & IT — Portfolio</footer>
+
+  <!-- Modal viewer -->
+  <dialog id="viewer">
+    <div class="modal-head">
+      <strong id="m-title">Project</strong>
+      <button class="btn close" id="m-close">✕ Close</button>
+    </div>
+    <div class="modal-body">
+      <div id="m-visual" style="height:220px; border-radius:14px; background:linear-gradient(135deg, rgba(122,140,255,.35), rgba(54,227,194,.25)); border:1px solid rgba(255,255,255,.12)"></div>
+      <p id="m-summary" class="muted"></p>
+      <ul id="m-points" style="margin-left:18px"></ul>
+      <div class="actions">
+        <a id="m-demo" class="btn" target="_blank">🔗 Open demo</a>
+        <a id="m-repo" class="btn" target="_blank">📦 View repo</a>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    // ===== Title: advanced drop letters =====
+    const titleEl = document.getElementById('title');
+    const titleText = 'Networking & IT Student';
+    [...titleText].forEach((ch, i) => {
+      const s = document.createElement('span');
+      s.textContent = ch;
+      s.className = 'drop';
+      s.style.animation = `drop 800ms cubic-bezier(.2,.8,0,1) forwards`;
+      s.style.animationDelay = `${i * 55}ms`;
+      titleEl.appendChild(s);
+    });
+
+    // ===== Scroll reveal =====
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=> e.isIntersecting && e.target.classList.add('in'));
+    }, {threshold:.12});
+    document.querySelectorAll('.reveal, section').forEach(el=>io.observe(el));
+
+    // ===== Nav spy =====
+    const links = [...document.querySelectorAll('header nav a[href^="#"]')];
+    const secs = links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const spy = new IntersectionObserver((ents)=>{
+      ents.forEach(ent=>{
+        if(ent.isIntersecting){
+          links.forEach(a=>a.classList.toggle('active', a.getAttribute('href') === '#' + ent.target.id));
+        }
+      })
+    }, {rootMargin:'-50% 0px -45% 0px'});
+    secs.forEach(s=>spy.observe(s));
+
+    // ===== Particles background =====
+    const cvs = document.getElementById('fx');
+    const ctx = cvs.getContext('2d');
+    let W=0,H=0, dots=[]; const N=80;
+    const resize=()=>{ W=window.innerWidth; H=window.innerHeight; cvs.width=W; cvs.height=H; }
+    window.addEventListener('resize', resize); resize();
+    for(let i=0;i<N;i++) dots.push({x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-0.5)*0.25, vy:(Math.random()-0.5)*0.25});
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      for(const d of dots){
+        d.x+=d.vx; d.y+=d.vy;
+        if(d.x<0||d.x>W) d.vx*=-1; if(d.y<0||d.y>H) d.vy*=-1;
+        ctx.beginPath(); ctx.arc(d.x,d.y,1.1,0,Math.PI*2); ctx.fillStyle='rgba(255,255,255,.55)'; ctx.fill();
+      }
+      for(let i=0;i<N;i++){
+        for(let j=i+1;j<N;j++){
+          const dx=dots[i].x-dots[j].x, dy=dots[i].y-dots[j].y; const dist=dx*dx+dy*dy;
+          if(dist< 120*120){ ctx.strokeStyle=`rgba(122,140,255,${1 - dist/(120*120)})`; ctx.lineWidth=.3; ctx.beginPath(); ctx.moveTo(dots[i].x,dots[i].y); ctx.lineTo(dots[j].x,dots[j].y); ctx.stroke(); }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    // ===== Interactive Projects: Modal viewer =====
+    const dlg = document.getElementById('viewer');
+    const mTitle = document.getElementById('m-title');
+    const mSummary = document.getElementById('m-summary');
+    const mPoints = document.getElementById('m-points');
+    const mDemo = document.getElementById('m-demo');
+    const mRepo = document.getElementById('m-repo');
+    const mVisual = document.getElementById('m-visual');
+
+    document.querySelectorAll('.proj-card').forEach(card=>{
+      card.addEventListener('click', ()=>{
+        const title = card.dataset.title;
+        const summary = card.dataset.summary;
+        const points = JSON.parse(card.dataset.points || '[]');
+        const demo = card.dataset.demo || '#';
+        const repo = card.dataset.repo || '#';
+
+        mTitle.textContent = title;
+        mSummary.textContent = summary;
+        mPoints.innerHTML = '';
+        points.forEach(p=>{ const li=document.createElement('li'); li.textContent=p; mPoints.appendChild(li); });
+        mDemo.href = demo; mRepo.href = repo;
+
+        // Visual theme from the card
+        const vis = card.querySelector('.proj-visual');
+        const bg = getComputedStyle(vis).backgroundImage;
+        mVisual.style.backgroundImage = bg;
+
+        if(typeof dlg.showModal === 'function'){ dlg.showModal(); }
+        else { dlg.setAttribute('open',''); }
+      });
+    });
+
+    document.getElementById('m-close').addEventListener('click', ()=> dlg.close());
+    dlg.addEventListener('click', (e)=>{ if(e.target === dlg) dlg.close(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && dlg.open) dlg.close(); });
+
+    // ===== Prevent scroll jump when using anchor links (account for fixed header) =====
+    const HEADER_H = 64;
+    const scrollToWithOffset = (el)=>{
+      const y = el.getBoundingClientRect().top + window.scrollY - HEADER_H + 1;
+      window.scrollTo({ top:y, behavior:'smooth' });
+    };
+    document.querySelectorAll('header nav a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(el){ e.preventDefault(); scrollToWithOffset(el); }
+      })
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

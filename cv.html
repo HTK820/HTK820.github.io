@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae | Heint Thant Kyaw (Azrael)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #475569;
+            --accent-color: #0d9488;
+            --bg-color: #ffffff;
+            --text-color: #1e293b;
+            --border-color: #e2e8f0;
+            --font-main: 'Outfit', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: #f1f5f9;
+            color: var(--text-color);
+            line-height: 1.5;
+            padding: 2rem 0;
+        }
+
+        /* CV container configured to mimic A4 aspect ratio on screens */
+        .cv-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-color);
+            padding: 3rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* Action Menu (Header bar) */
+        .cv-actions {
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-action:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-action.btn-secondary {
+            background-color: #ffffff;
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-action.btn-secondary:hover {
+            background-color: #f8fafc;
+        }
+
+        /* Header Style */
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-left h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+        }
+
+        .header-left h2 {
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-left p {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+            max-width: 450px;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-info i {
+            width: 20px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        /* CV Sections */
+        .cv-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        /* Profile Block */
+        .profile-desc {
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        /* Education & Experience Items */
+        .cv-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.4rem;
+        }
+
+        .cv-item-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .cv-item-subtitle {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--accent-color);
+        }
+
+        .cv-item-date {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .cv-bullet-list {
+            margin-left: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .cv-bullet-list li {
+            margin-bottom: 0.25rem;
+            color: var(--text-color);
+        }
+
+        /* Skills Layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+        }
+
+        .skill-category h4 {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .skill-tag {
+            font-size: 0.8rem;
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+        }
+
+        .project-item {
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 6px;
+        }
+
+        .project-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .project-desc {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-link {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* Certifications Lists */
+        .cert-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .cert-list li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cert-list li i {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+        }
+
+        /* Printing Specific Styles */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+                color: #000000;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+                border-radius: 0;
+            }
+
+            .cv-actions {
+                display: none; /* Hide header controls when printing */
+            }
+
+            .btn-action {
+                display: none;
+            }
+
+            .project-item {
+                border: none;
+                padding: 0;
+                margin-bottom: 0.75rem;
+            }
+
+            .projects-grid {
+                display: block;
+            }
+
+            .skills-grid {
+                gap: 1.5rem;
+            }
+
+            /* Adjust margin for A4 page breaks if necessary */
+            .cv-section {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .cv-container {
+                padding: 1.5rem;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .contact-info {
+                text-align: left;
+                width: 100%;
+                border-top: 1px solid var(--border-color);
+                padding-top: 1rem;
+            }
+
+            .skills-grid, .projects-grid, .cert-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Actions bar (Visible only in web layout) -->
+    <div class="cv-actions">
+        <a href="index.html" class="btn-action btn-secondary">
+            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+        </a>
+        <button onclick="window.print()" class="btn-action">
+            <i class="fa-solid fa-print"></i> Print / Save PDF
+        </button>
+    </div>
+
+    <!-- CV sheet container -->
+    <div class="cv-container">
+        <!-- CV Header -->
+        <header>
+            <div class="header-left">
+                <h1>Heint Thant Kyaw</h1>
+                <h2>Networking Specialist & IT Analyst</h2>
+                <p>Final-year B.Sc. IT student specializing in Network Infrastructure, Linux Systems Administration, and Defensive Cybersecurity.</p>
+            </div>
+            <div class="contact-info">
+                <div><i class="fa-solid fa-envelope"></i> <a href="mailto:heintthantkyaw124004@gmail.com">heintthantkyaw124004@gmail.com</a></div>
+                <div><i class="fa-solid fa-location-dot"></i> Bangkok, Thailand</div>
+                <div><i class="fa-brands fa-github"></i> <a href="https://github.com/HTK820" target="_blank">github.com/HTK820</a></div>
+            </div>
+        </header>
+
+        <!-- Profile -->
+        <section class="cv-section">
+            <h3 class="section-title">Profile Summary</h3>
+            <p class="profile-desc">
+                Final-year Bachelor of Science in Information Technology student specializing in Networking. Strong interest in cybersecurity, especially defensive security and network protection. Seeking an internship to gain real-world networking and IT infrastructure experience. Also experienced in web development and programming through academic projects and self-learning.
+            </p>
+        </section>
+
+        <!-- Education -->
+        <section class="cv-section">
+            <h3 class="section-title">Education</h3>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div>
+                        <span class="cv-item-title">Stamford International University</span><br>
+                        <span class="cv-item-subtitle">Bachelor of Science in Information Technology (Networking)</span>
+                    </div>
+                    <span class="cv-item-date">2022 - Present</span>
+                </div>
+                <ul class="cv-bullet-list">
+                    <li>Primary focus on Operating Systems, Computer Networking, Linux, and System Administration.</li>
+                    <li>Hands-on experience with Linux command line, file permissions, process management, and basic shell scripting.</li>
+                    <li>Practical networking labs involving IP addressing, routing concepts, and traffic analysis.</li>
+                    <li>Exposure to system configuration, troubleshooting, and OS comparison studies.</li>
+                    <li>Minor experience in programming and scripting to support system and administrative tasks.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="cv-section">
+            <h3 class="section-title">Practical Experience</h3>
+            
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div>
+                        <span class="cv-item-title">iAngel Mobile Store</span><br>
+                        <span class="cv-item-subtitle">Mobile Technician Assistant</span>
+                    </div>
+                    <span class="cv-item-date">2020 - 2021</span>
+                </div>
+                <ul class="cv-bullet-list">
+                    <li>Assisted with changing smartphone ROMs (e.g., China ROM to Global ROM).</li>
+                    <li>Supported device rooting procedures under technician supervision.</li>
+                    <li>Helped diagnose and repair common software and system errors.</li>
+                    <li>Performed basic device testing after repairs and setup.</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div>
+                        <span class="cv-item-title">Personal IT Security Support</span><br>
+                        <span class="cv-item-subtitle">Informal Experience</span>
+                    </div>
+                    <span class="cv-item-date">Ongoing</span>
+                </div>
+                <ul class="cv-bullet-list">
+                    <li>Performed malware detection and cleanup on personal laptops.</li>
+                    <li>Assisted with basic system recovery and security improvements.</li>
+                    <li>Helped users prevent repeat security incidents through safer usage practices.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section class="cv-section">
+            <h3 class="section-title">Skills & Technologies</h3>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Networking</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">VLAN & Inter-VLAN Routing</span>
+                        <span class="skill-tag">Static Routing</span>
+                        <span class="skill-tag">Router-on-a-Stick</span>
+                        <span class="skill-tag">Access Control Lists (ACL)</span>
+                        <span class="skill-tag">DHCP / DNS / NAT</span>
+                        <span class="skill-tag">EtherChannel</span>
+                        <span class="skill-tag">Cisco CLI</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Cybersecurity</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Defensive Security</span>
+                        <span class="skill-tag">ISO27001 Concepts</span>
+                        <span class="skill-tag">Access Control</span>
+                        <span class="skill-tag">Linux Security Hardening</span>
+                        <span class="skill-tag">Malware Detection</span>
+                        <span class="skill-tag">TryHackMe</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Linux & Operating Systems</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">File System Hardening</span>
+                        <span class="skill-tag">CLI Commands</span>
+                        <span class="skill-tag">Networking Diagnostics</span>
+                        <span class="skill-tag">Process Management</span>
+                        <span class="skill-tag">Bash Scripting</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>IoT & Development</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ESP32 MCU</span>
+                        <span class="skill-tag">Arduino IDE</span>
+                        <span class="skill-tag">Blynk IoT</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Web (HTML/CSS/JS/PHP/SQL)</span>
+                        <span class="skill-tag">Java</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="cv-section">
+            <h3 class="section-title">Academic & Lab Projects</h3>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <div class="project-title">Cisco Packet Tracer Labs</div>
+                    <div class="project-desc">LAN/WAN network simulation involving VLAN routing, ACL policies, and EtherChannel bindings.</div>
+                    <a href="https://github.com/HTK820/Networking" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Repo</a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">IoT Smart Gardening System</div>
+                    <div class="project-desc">Automated watering utilizing ESP32, soil moisture sensors, relays, and Blynk IoT dash.</div>
+                    <a href="https://github.com/HTK820/IOT" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Repo</a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">ISO27001 Mini Case Study</div>
+                    <div class="project-desc">Drafting risk mapping and defensive compliance control grids based on ISO audit standards.</div>
+                    <a href="https://github.com/HTK820/ISO27001" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Repo</a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">Linux Administration Notes</div>
+                    <div class="project-desc">Compiled reference documentation of essential CLI tools, permissions, and network diagnostics.</div>
+                    <a href="https://github.com/HTK820/Linux" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> View Repo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="cv-section">
+            <h3 class="section-title">Certifications & Languages</h3>
+            <ul class="cert-list">
+                <li><i class="fa-solid fa-award"></i> CCNA – KMD (Local Institution), 2021</li>
+                <li><i class="fa-solid fa-award"></i> CompTIA A+ – KMD (Local Institution), 2020</li>
+                <li><i class="fa-solid fa-award"></i> CCEP (Certified Cybersecurity Educator) – 2025</li>
+                <li><i class="fa-solid fa-award"></i> Pentest Foundations – Cybrary, 2022</li>
+                <li><i class="fa-solid fa-award"></i> Java (English) Oracle Completion – 2024</li>
+                <li><i class="fa-solid fa-award"></i> JLPT N4 (Japanese Language Proficiency) – 2020</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>

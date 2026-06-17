@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heint Thant Kyaw (Azrael) | Networking & Cybersecurity Portfolio</title>
+    <meta name="description" content="Professional portfolio of Heint Thant Kyaw (Azrael), specializing in Computer Networking, Cybersecurity, Linux System Administration, and IoT. Check out my projects, skills, and certifications.">
+    <meta name="keywords" content="Heint Thant Kyaw, Azrael, Networking, Cybersecurity, Linux, System Administration, CCNA, CompTIA A+, IoT, ESP32, Portfolio">
+    <meta name="author" content="Heint Thant Kyaw">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Heint Thant Kyaw (Azrael) | Networking & Cybersecurity Portfolio">
+    <meta property="og:description" content="Professional portfolio of Heint Thant Kyaw (Azrael) showcasing projects and expertise in IT infrastructure, networking labs, Linux, and cybersecurity.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Background Elements -->
+    <div class="glow-bg"></div>
+    <div class="radial-glow"></div>
+
+    <!-- Header Navigation -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="bracket">&lt;</span>Azrael<span class="bracket">/&gt;</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="cv.html" class="btn btn-secondary nav-cv-btn" target="_blank">
+                    <i class="fa-solid fa-file-pdf"></i> Resume
+                </a>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="badge-container hero-fade-in">
+                    <span class="status-badge"><span class="pulse-dot"></span> Open to Internships</span>
+                </div>
+                <h1 class="hero-title hero-fade-in">
+                    Hi, I'm <span class="accent-text">Heint Thant Kyaw</span>
+                </h1>
+                <h2 class="hero-subtitle hero-fade-in">
+                    I am a <span class="typing-text" id="typing-text"></span><span class="cursor">|</span>
+                </h2>
+                <p class="hero-desc hero-fade-in">
+                    Final-year IT student based in Bangkok, specializing in Computer Networking and Cybersecurity. Focused on defensive security, Linux system administration, and building IoT infrastructure.
+                </p>
+                <div class="hero-cta hero-fade-in">
+                    <a href="#projects" class="btn btn-primary">View Work</a>
+                    <a href="#contact" class="btn btn-outline">Let's Connect</a>
+                </div>
+                
+                <div class="social-links hero-fade-in">
+                    <a href="https://github.com/HTK820" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="mailto:heintthantkyaw124004@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="hero-graphics hero-fade-in">
+                <div class="cyber-shield-container">
+                    <div class="cyber-ring ring-1"></div>
+                    <div class="cyber-ring ring-2"></div>
+                    <div class="cyber-ring ring-3"></div>
+                    <div class="shield-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#about" class="scroll-down" aria-label="Scroll Down">
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+                <span class="arrow"></span>
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <span class="section-subtitle">A brief overview of my profile</span>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-info">
+                        <h3>Networking Specialist & Cybersecurity Enthusiast</h3>
+                        <p>
+                            I am currently in my final year pursuing a <strong>Bachelor of Science in Information Technology</strong> at Stamford International University, Bangkok. Specializing in Computer Networking, I focus on the configuration, optimization, and security of network infrastructures.
+                        </p>
+                        <p>
+                            My true passion lies in <strong>defensive security</strong> and protecting systems from modern threats. Through hands-on labs and certifications, I've developed deep capabilities in Linux system administration, routing and switching configurations, access control policies, and IoT setups. I enjoy tackling complex network problems and implementing defensive security controls to safeguard data.
+                        </p>
+                        
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <h4>Education</h4>
+                                <p>B.Sc. in IT (Networking)<br>Stamford International Uni</p>
+                            </div>
+                            <div class="info-card">
+                                <i class="fa-solid fa-award"></i>
+                                <h4>Key Focus</h4>
+                                <p>Network Defense, Linux Admin & IoT Integrations</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-stats">
+                        <div class="stat-box">
+                            <span class="stat-num">2+</span>
+                            <span class="stat-text">Years Academic Studies & Labs</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num">8+</span>
+                            <span class="stat-text">Completed Projects</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num">6</span>
+                            <span class="stat-text">Certificates</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num">N4</span>
+                            <span class="stat-text">JLPT Japanese Level</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Expertise</h2>
+                    <span class="section-subtitle">Skills and technologies I work with</span>
+                </div>
+                
+                <div class="skills-grid">
+                    <!-- Networking Card -->
+                    <div class="skill-category-card">
+                        <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3>Networking</h3>
+                        <ul class="skills-list">
+                            <li><i class="fa-solid fa-circle-check"></i> VLAN & Inter-VLAN Routing</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Static Routing & OSPF</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Access Control Lists (ACLs)</li>
+                            <li><i class="fa-solid fa-circle-check"></i> DHCP, DNS, & NAT Setup</li>
+                            <li><i class="fa-solid fa-circle-check"></i> EtherChannel / Port-Channel</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Cisco Packet Tracer CLI</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cybersecurity Card -->
+                    <div class="skill-category-card">
+                        <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
+                        <h3>Cybersecurity</h3>
+                        <ul class="skills-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Defensive Security Basics</li>
+                            <li><i class="fa-solid fa-circle-check"></i> ISO 27001 Concepts & Audit</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Network Traffic Analysis</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Access Control & IAM</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Malware Detection & Cleanup</li>
+                            <li><i class="fa-solid fa-circle-check"></i> TryHackMe Learning Path</li>
+                        </ul>
+                    </div>
+
+                    <!-- Linux & OS Card -->
+                    <div class="skill-category-card">
+                        <div class="card-icon"><i class="fa-brands fa-linux"></i></div>
+                        <h3>Linux & OS</h3>
+                        <ul class="skills-list">
+                            <li><i class="fa-solid fa-circle-check"></i> Linux System Administration</li>
+                            <li><i class="fa-solid fa-circle-check"></i> CLI & File Permission Hardening</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Network Diagnostics (ip, ss, netstat)</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Process & Service Management</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Bash Shell Scripting Basics</li>
+                            <li><i class="fa-solid fa-circle-check"></i> OS Virtualization (ESXi, Hyper-V)</li>
+                        </ul>
+                    </div>
+
+                    <!-- IoT & Development Card -->
+                    <div class="skill-category-card">
+                        <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h3>IoT & Dev</h3>
+                        <ul class="skills-list">
+                            <li><i class="fa-solid fa-circle-check"></i> ESP32 Microcontrollers</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Sensor Integration & Relays</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Arduino IDE & Blynk IoT</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Python Scripting</li>
+                            <li><i class="fa-solid fa-circle-check"></i> HTML5, CSS3, & JavaScript</li>
+                            <li><i class="fa-solid fa-circle-check"></i> PHP, SQL Database, & Java</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <span class="section-subtitle">Real-world labs, reports, and applications</span>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Project 1: Cisco Packet Tracer -->
+                    <div class="project-card">
+                        <div class="project-img-placeholder" style="background: linear-gradient(135deg, #0f172a, #1e293b);">
+                            <i class="fa-solid fa-diagram-project"></i>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Networking</span>
+                            <h3>Cisco Packet Tracer Labs</h3>
+                            <p>VLAN, Inter-VLAN Routing, ACL security policies, DHCP server configuration, NAT, and EtherChannel setups built using Cisco CLI interface.</p>
+                            <div class="project-tech">
+                                <span>Cisco CLI</span>
+                                <span>Packet Tracer</span>
+                                <span>Subnetting</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/HTK820/Networking" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: IoT Smart Gardening -->
+                    <div class="project-card">
+                        <div class="project-img-placeholder" style="background: linear-gradient(135deg, #064e3b, #065f46);">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">IoT & Python</span>
+                            <h3>IoT Smart Gardening System</h3>
+                            <p>Automated plant-watering system employing ESP32 microcontroller, soil moisture sensors, relay actuators, and Blynk dashboard interface integration.</p>
+                            <div class="project-tech">
+                                <span>ESP32</span>
+                                <span>C++</span>
+                                <span>Sensors</span>
+                                <span>Blynk IoT</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/HTK820/IOT" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: ISO27001 Mini Case Study -->
+                    <div class="project-card">
+                        <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1e1b4b, #312e81);">
+                            <i class="fa-solid fa-file-shield"></i>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Cybersecurity</span>
+                            <h3>ISO27001 Risk Assessment</h3>
+                            <p>Mini case study involving risk analysis, mapping compliance requirements, and drafting defensive security controls according to ISO 27001 standards.</p>
+                            <div class="project-tech">
+                                <span>ISO27001</span>
+                                <span>Risk Management</span>
+                                <span>Auditing</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/HTK820/ISO27001" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Library Management System -->
+                    <div class="project-card">
+                        <div class="project-img-placeholder" style="background: linear-gradient(135deg, #581c87, #6b21a8);">
+                            <i class="fa-solid fa-book"></i>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Web Development</span>
+                            <h3>Library Management System</h3>
+                            <p>Web-based book rental and user control panel. Features secure login, borrowing timelines, inventory tracking, and database querying.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>PHP</span>
+                                <span>MySQL</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="project-link-disabled"><i class="fa-solid fa-lock"></i> Academic Project</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Linux Admin Notes & Guide -->
+                    <div class="project-card">
+                        <div class="project-img-placeholder" style="background: linear-gradient(135deg, #78350f, #92400e);">
+                            <i class="fa-solid fa-terminal"></i>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Linux</span>
+                            <h3>Linux Basics & System Notes</h3>
+                            <p>A reference documentation repository explaining essential Linux commands, permissions, directory tree hierarchy, and basic system administration utilities.</p>
+                            <div class="project-tech">
+                                <span>Linux CLI</span>
+                                <span>Bash</span>
+                                <span>OS Security</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/HTK820/Linux" target="_blank" class="project-link"><i class="fa-brands fa-github"></i> Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Apple Store Front-end Clone -->
+                    <div class="project-card">
+                        <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1f2937, #111827);">
+                            <i class="fa-brands fa-apple"></i>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-tag">Web Design</span>
+                            <h3>Apple Store Clone</h3>
+                            <p>A pixel-perfect responsive recreation of the Apple Store storefront, utilizing advanced layouts, Flexbox/Grid systems, and interactive UI dynamics.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>Vanilla CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <span class="project-link-disabled"><i class="fa-solid fa-lock"></i> Personal Project</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="section certificates-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Certifications</h2>
+                    <span class="section-subtitle">My professional credentials and achievements</span>
+                </div>
+                
+                <div class="certificates-grid">
+                    <!-- CCNA -->
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fa-solid fa-network-wired"></i></div>
+                        <h3>CCNA</h3>
+                        <p class="cert-issuer">Cisco Certified Network Associate</p>
+                        <p class="cert-org">Issued by KMD (Local Institution) | 2021</p>
+                    </div>
+
+                    <!-- CompTIA A+ -->
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <h3>CompTIA A+</h3>
+                        <p class="cert-issuer">Core Hardware & OS Troubleshooting</p>
+                        <p class="cert-org">Issued by KMD (Local Institution) | 2020</p>
+                    </div>
+
+                    <!-- CCEP -->
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>CCEP</h3>
+                        <p class="cert-issuer">Certified Cybersecurity Educator Professional</p>
+                        <p class="cert-org">Issued by Red Team Leaders | 2025</p>
+                    </div>
+
+                    <!-- Pentest Foundations -->
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fa-solid fa-terminal"></i></div>
+                        <h3>Pentest Foundations</h3>
+                        <p class="cert-issuer">Vulnerability Assessment & Network Auditing</p>
+                        <p class="cert-org">Issued by Cybrary | 2022</p>
+                    </div>
+
+                    <!-- Java Completion -->
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fa-brands fa-java"></i></div>
+                        <h3>Java Completion</h3>
+                        <p class="cert-issuer">Java Programming Fundamentals</p>
+                        <p class="cert-org">Issued by Oracle / University Program | 2024</p>
+                    </div>
+
+                    <!-- JLPT N4 -->
+                    <div class="cert-card">
+                        <div class="cert-icon"><i class="fa-solid fa-language"></i></div>
+                        <h3>JLPT N4</h3>
+                        <p class="cert-issuer">Japanese Language Proficiency Test</p>
+                        <p class="cert-org">Issued by Japan Foundation | 2020</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="experience" class="section experience-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Journey</h2>
+                    <span class="section-subtitle">Education and practical experience</span>
+                </div>
+                
+                <div class="timeline">
+                    <!-- Timeline Item 1: Education -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2022 - Present</div>
+                        <div class="timeline-content">
+                            <span class="timeline-tag">Education</span>
+                            <h3>Stamford International University</h3>
+                            <h4>Bachelor of Science in Information Technology</h4>
+                            <p>Primary focus on Operating Systems, Computer Networking, Linux system administration, and network troubleshooting. Hands-on configuration labs in Cisco environments (switching, routing, access controls), traffic analysis, and minor scripting tasks.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2: CCEP -->
+                    <div class="timeline-item right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2025</div>
+                        <div class="timeline-content">
+                            <span class="timeline-tag">Credential</span>
+                            <h3>Certified Cybersecurity Educator</h3>
+                            <h4>Red Team Leaders</h4>
+                            <p>Trained in essential defensive concepts, security awareness training, vulnerability assessment structures, and ethical network configuration standards.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3: iAngel -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2020 - 2021</div>
+                        <div class="timeline-content">
+                            <span class="timeline-tag">Experience</span>
+                            <h3>iAngel Mobile Store</h3>
+                            <h4>Mobile Technician Assistant</h4>
+                            <p>Assisted in diagnostic testing, smartphone ROM installations (OEM modifications/flashing), supervised device rooting, and standard software/hardware repairs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4: Personal IT Security Support -->
+                    <div class="timeline-item right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Ongoing</div>
+                        <div class="timeline-content">
+                            <span class="timeline-tag">Experience</span>
+                            <h3>Personal IT Security Support</h3>
+                            <h4>Informal Security Consultation</h4>
+                            <p>Assisting users with system recovery, malware detection and eradication, software patching, and security posture improvements to prevent repeat occurrences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section scroll-reveal">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <span class="section-subtitle">Reach out for internships, projects, or questions</span>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info-panel">
+                        <h3>Let's build something secure together!</h3>
+                        <p>I am currently looking for internship opportunities in Networking, System Administration, or Cybersecurity. If you have any inquiries or want to work together, feel free to drop a message.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="item-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="item-text">
+                                    <span>Email Me</span>
+                                    <a href="mailto:heintthantkyaw124004@gmail.com">heintthantkyaw124004@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="item-text">
+                                    <span>Location</span>
+                                    <p>Bangkok, Thailand</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="item-icon"><i class="fa-brands fa-github"></i></div>
+                                <div class="item-text">
+                                    <span>GitHub Profile</span>
+                                    <a href="https://github.com/HTK820" target="_blank">github.com/HTK820</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-panel">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required placeholder="Internship Opportunity">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Hi Azrael, we would like to talk to you about..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                            <div id="form-message" class="form-message"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p class="copyright">&copy; 2026 Heint Thant Kyaw (Azrael). All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="cv.html" target="_blank">CV / Resume</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
